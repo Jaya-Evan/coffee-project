@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,74 +12,95 @@
     <script src="https://kit.fontawesome.com/1158dfb1c4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Coffee!</h1>
 
+<div class="jumbotron jumbotron-fluid" id="main-jumbotron">
     <div class="container">
-        <div class="row">
-            <div class="form-group">
-                <form>
-                    <label for="roast-selection">Select roast type</label>
-                    <select class="selectpicker show-menu-arrow form-control" data-live-search="true"  id="roast-selection">
-                        <!--            <option value="">All</option>-->
-                        <option>Light</option>
-                        <option>Medium</option>
-                        <option>Dark</option>
-                    </select>
-                    <input id="roast-submit" type="submit" />
-                </form>
-            </div>
+        <h1 class="display-4">Fancy Coffee Co.</h1>
+        <p class="lead">Checkout our amazing selection of coffee!</p>
+        <button type="button" class="btn btn-dark">About us</button>
+        <button type="button" class="btn btn-info">Order online</button>
+    </div>
+</div>
 
-            <div class="form-group">
-                <form>
-                    <label for="roast-selection">Select blend type</label>
-                    <select class="selectpicker show-menu-arrow form-control" data-live-search="true"  id="blend-selection">
-                        <!--            <option value="">All</option>-->
-                        <option>Light City</option>
-                        <option>Half City</option>
-                        <option>Half City</option>
-                        <option>Half City</option>
-                        <option>Cinnamon</option>
-                        <option>City</option>
-                        <option>American</option>
-                        <option>Breakfast</option>
-                        <option>High</option>
-                        <option>Continental</option>
-                        <option>European</option>
-                        <option>Espresso</option>
-                        <option>Viennese</option>
-                        <option>Italian</option>
-                        <option>French</option>
-                    </select>
-                    <input id="blend-submit" type="submit" />
-                </form>
-            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form>
+                <label for="roast-selection"></label>
+                <select class="form-control" id="roast-selection">
+                    <option selected="selected" disabled="true"> -- Select Roast --</option>
+                    <option>Light</option>
+                    <option>Medium</option>
+                    <option>Dark</option>
+                </select>
+                <button class="btn btn-sm btn-warning btn-block" id="submit" type="button">Search</button>
+            </form>
+        </div>
+        <div class="col-12 col-md-6">
+            <form>
+                <label for="coffee-selection"></label>
+                <select class="form-control" id="coffee-selection">
+                    <option selected="selected" disabled="true"> -- Select Roast --</option>
+                    <option>Light City</option>
+                    <option>Half City</option>
+                    <option>Half City</option>
+                    <option>Half City</option>
+                    <option>Cinnamon</option>
+                    <option>City</option>
+                    <option>American</option>
+                    <option>Breakfast</option>
+                    <option>High</option>
+                    <option>Continental</option>
+                    <option>New Orleans</option>
+                    <option>European</option>
+                    <option>Espresso</option>
+                    <option>Viennese</option>
+                    <option>Italian</option>
+                    <option>French</option>
+                </select>
+                <button class="btn btn-sm btn-warning btn-block" id="submit-coffee" type="button">Search</button>
+            </form>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <h5 class="card-title">NAME</h5>
-                    <!-- <img class="card-img-top" src="img" alt="Card image cap">&ndash;&gt;-->
-                    <div class="card-body" id="coffees">
-                        <!--                    <h3> class="d-none">ID</h3>-->
-                        <p class="card-text">ROAST</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <div class="col-12">-->
+<!--            <table>-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th>NAME</th>-->
+<!--                    <th>ROAST</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="coffees"></tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-    <script src="main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ROAST</th>
+    </tr>
+    </thead>
+    <tbody id="coffees"></tbody>
+</table>
+
+
+<script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>

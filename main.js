@@ -1,16 +1,14 @@
 "use strict"
 
 function renderCoffee(coffee) {
-var html = '<card class="coffees">';
-    html +=  '<div>'+coffee.name ;
-    html +=  '<p>'+coffee.roast +'</p>'+'</div>';
+    var html = '<tr class="coffee">';
+    html += '<td>' + coffee.id + '</td>';
+    html += '<td>' + coffee.name + '</td>';
+    html += '<td>' + coffee.roast + '</td>';
+    html += '</tr>';
 
     return html;
 }
-
-
-
-
 
 function renderCoffees(coffees) {
     var reversed=coffees.reverse()
@@ -24,25 +22,22 @@ function renderCoffees(coffees) {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
+    var selectedRoast = roastSelection.value.toLowerCase();
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
-        // else {
-        //     filteredCoffees.push(coffees[]);
-        // }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light', option: 'all',},
-    {id: 2, name: 'Half City', roast: 'light', option: 'all',},
-    {id: 2, name: 'Half City', roast: 'light', option: 'all',},
-    {id: 2, name: 'Half City', roast: 'light', option: 'all',},
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
     {id: 4, name: 'City', roast: 'medium'},
     {id: 5, name: 'American', roast: 'medium'},
@@ -60,7 +55,6 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-// var blendSelection = document.querySelector('#blend-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
