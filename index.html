@@ -36,11 +36,12 @@
                 <button class="btn btn-sm btn-warning btn-block" id="submit" type="button">Search</button>
             </form>
         </div>
+
         <div class="col-12 col-md-6">
             <form>
                 <label for="coffee-selection"></label>
                 <select class="form-control" id="coffee-selection">
-                    <option selected="selected" disabled="true"> -- Select Roast --</option>
+                    <option selected="selected" disabled="true"> -- Select Coffee --</option>
                     <option>Light City</option>
                     <option>Half City</option>
                     <option>Half City</option>
@@ -64,33 +65,18 @@
     </div>
 </div>
 
-<!--<div class="container-fluid">-->
-<!--    <div class="row">-->
-<!--        <div class="col-12">-->
-<!--            <table>-->
-<!--                <thead>-->
-<!--                <tr>-->
-<!--                    <th>NAME</th>-->
-<!--                    <th>ROAST</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody id="coffees"></tbody>-->
-<!--            </table>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>ROAST</th>
-    </tr>
-    </thead>
-    <tbody id="coffees"></tbody>
-</table>
-
+<div class="container overflow-auto">
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="width: 18rem;">
+                <h5 class="card-title">NAME</h5>
+                <div class="card-body" id="coffees">
+                    <p class="card-text">ROAST</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
