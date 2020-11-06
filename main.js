@@ -1,7 +1,15 @@
 "use strict"
 
+// function renderCoffeeSearch(coffee) {
+//     var html = '<card class = "coffees">';
+//     html += '<div>' + coffee.name;
+//     html += '<p>' + coffee.roast + '</p>' + '</div>';
+//
+//     return html;
+// }
+
 function renderCoffee(coffee) {
-    var html = '<card class = "coffees">';
+    var html = '<div class = "coffees">';
     html += '<div>' + coffee.name;
     html += '<p>' + coffee.roast + '</p>' + '</div>';
 
