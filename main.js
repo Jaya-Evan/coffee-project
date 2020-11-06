@@ -1,13 +1,16 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+var html = '<card class="coffees">';
+    html +=  '<div>'+coffee.name ;
+    html +=  '<p>'+coffee.roast +'</p>'+'</div>';
 
     return html;
-}
+       }
+
+
+
+
 
 function renderCoffees(coffees) {
     var reversed=coffees.reverse()

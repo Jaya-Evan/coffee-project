@@ -24,16 +24,20 @@
         <input id="submit" type="submit" />
     </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th class="d-none">ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="width: 18rem;">
+                    <h5 class="card-title">NAME</h5>
+                    <!-- <img class="card-img-top" src="img" alt="Card image cap">&ndash;&gt;-->
+                    <div class="card-body" id="coffees">
+                        <!--                    <h3> class="d-none">ID</h3>-->
+                        <p class="card-text">ROAST</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
