@@ -1,6 +1,6 @@
 #main-jumbotron {
     background-color: gray;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("img/coffee1.jpg");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("img/coffee1.jpg");
     background-size: cover;
     background-position: center;
     height: 20vh;
@@ -8,22 +8,103 @@
     margin: auto;
 }
 
-#main-container {
-    background-color: black;
+@media (min-width: 576px) {
+    #main-jumbotron {
+        background-color: gray;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("img/coffee1.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 20vh;
+        color: white;
+        margin: auto;
+    }
+
+    #main-jumbotron {
+        height: 20vh;
+    }
+
+    #coffee-card1 {
+        margin: auto;
+    }
+
+    #coffee-card2 {
+        margin: auto;
+    }
+
+    #main-container {
+        background-color: black;
+    }
+
+    #coffee-overflow {
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("img/coffeebeans.jpg");
+        height: 100vh;
+    }
+
+    body {
+        background-color: gray;
+        height: 100vh;
+        margin: auto;
+    }
+
+    .card{
+        width: 300px;
+    }
 }
 
-#coffee-overflow {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("img/coffeebeans.jpg");
-    height: 100vh;
+@media (min-width: 768px) {
+    #main-jumbotron {
+        background-color: gray;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("img/coffee1.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 20vh;
+        color: white;
+        margin: auto;
+    }
+    #main-container {
+        background-color: black;
+    }
+
+    #coffee-overflow {
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("img/coffeebeans.jpg");
+        height: 100vh;
+    }
+
+    body {
+        background-color: gray;
+        height: 100vh;
+        margin: auto;
+    }
+
+    .card{
+        width: 300px;
+    }
+
+    #coffee-card1 {
+        margin: initial;
+    }
+
+    #coffee-card2 {
+        margin: initial;
+    }
 }
 
-body {
-    background-color: gray;
-    height: 100vh;
-    margin: auto;
-}
 
-.card{
-    width: 300px;
+/*#main-container {*/
+/*    background-color: black;*/
+/*}*/
 
-}
+/*#coffee-overflow {*/
+/*    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("img/coffeebeans.jpg");*/
+/*    height: 100vh;*/
+/*}*/
+
+/*body {*/
+/*    background-color: gray;*/
+/*    height: 100vh;*/
+/*    margin: auto;*/
+/*}*/
+
+/*.card{*/
+/*    width: 300px;*/
+/*}*/
