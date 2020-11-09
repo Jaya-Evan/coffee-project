@@ -1,13 +1,5 @@
 "use strict"
-
-// function renderCoffeeSearch(coffee) {
-//     var html = '<card class = "coffees">';
-//     html += '<div>' + coffee.name;
-//     html += '<p>' + coffee.roast + '</p>' + '</div>';
-//
-//     return html;
-// }
-
+//html for displaying list of coffees
 function renderCoffee(coffee) {
     var html = '<div class = "coffees">';
     html += '<div>' + coffee.name;
@@ -15,6 +7,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+//reverse the index numbers for the coffees array of object
 function renderCoffees(coffees) {
     var reversed=coffees.reverse()
     var html = '';
@@ -24,8 +17,9 @@ function renderCoffees(coffees) {
     return html;
 }
 
+//Function to update coffee as per selected roast
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+    e.preventDefault();
     var selectedRoast = roastSelection.value.toLowerCase();
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
@@ -36,7 +30,8 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+
+//coffees array of objects
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -56,44 +51,70 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 
-var singleCoffeeButton=document.querySelector("#coffeeList")
-var roastSelection = document.querySelector('#roast-selection');
+var roastSelection = document.querySelector('#roast-selection')
+
+
+// query selectors for single coffee
+var tbody2=document.querySelector('#SingleCoffee');
+var singleCoffeeButton=document.querySelector("#submit-coffee");
+var x=document.querySelector('#coffeeList');
 
 tbody.innerHTML = renderCoffees(coffees);
-tbody.innerHTML = singleCoffee(coffees);
+
+tbody2.innerHTML = renderSingleCoffee(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
-singleCoffeeButton.addEventListener("click",updateCoffeeName);
+singleCoffeeButton.addEventListener("click",updateSingleCoffeeName);
 
 
 //__------------------------------------__//__------------------------------------__//__------------------------------------__
-
+//html for displaying single coffee
 function renderSingleCoffee(coffee) {
     var html = '<div class = "coffees">';
     html += '<div>' + coffee.name;
     html += '<p>' + coffee.roast + '</p>' + '</div>';
     return html;
 }
-
+//function to display single coffee ----->PENDING
 function singleCoffee(coffees) {
     var html = '';
     for(var i = coffees.length-1; i >= 0; i--) {
-        // if(singleCoffee.indexOf(coffees[i])===sell)
-    }
+        // if(renderSingleCoffee.indexOf(coffees[i])===selectedCoffee){
+            html+=renderSingleCoffee(coffees);
+        }
     return html;
 }
 
-function updateCoffeeName(e){
-e.preventDefault();
-var selectedCoffee=singleCoffeeButton.value.toLowerCase()
-var singleCoffees=[];
-singleCoffees.forEach(function (coffee){
-    if(coffee.name===selectedCoffee){
-        singleCoffees.push(coffee);
-    }
-    tbody.innerHTML=singleCoffee(singleCoffees)
-})
+//function to update coffee as per search --->PENDING
+function updateSingleCoffeeName(e){
+    e.preventDefault();
+    var selectedCoffee=x.value.toLowerCase()
+    var filteredSingleCoffee=[];
+    coffees.forEach(function (coffee){
+        if(coffee.name===selectedCoffee){
+            filteredSingleCoffee.push(coffee);
+        }
+        tbody2.innerHTML=singleCoffee(filteredSingleCoffee);
+    })
 }
+
+
+//BUFFER FOR  COMMENTED CODE
+
+// function renderCoffeeSearch(coffee) {
+//     var html = '<card class = "coffees">';
+//     html += '<div>' + coffee.name;
+//     html += '<p>' + coffee.roast + '</p>' + '</div>';
+//
+//     return html;
+// }
+
+
+// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+
+
+// don't submit the form, we just want to update the data
