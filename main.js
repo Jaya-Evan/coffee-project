@@ -54,21 +54,18 @@ var coffees = [
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
-
 var roastSelection = document.querySelector('#roast-selection')
 
+tbody.innerHTML = renderCoffees(coffees);
+submitButton.addEventListener('click', updateCoffees);
 
 // query selectors for single coffee
 var tbody2=document.querySelector('#SingleCoffee');
 var singleCoffeeButton=document.querySelector("#submit-coffee");
 var x=document.querySelector('#coffeeList');
 
-tbody.innerHTML = renderCoffees(coffees);
-
 tbody2.innerHTML = renderSingleCoffee(coffees);
-
-submitButton.addEventListener('click', updateCoffees);
-singleCoffeeButton.addEventListener("click",updateSingleCoffeeName);
+singleCoffeeButton.addEventListener("click", updateSingleCoffeeName);
 
 
 //__------------------------------------__//__------------------------------------__//__------------------------------------__
@@ -82,24 +79,24 @@ function renderSingleCoffee(coffee) {
 //function to display single coffee ----->PENDING
 function singleCoffee(coffees) {
     var html = '';
-    for(var i = coffees.length-1; i >= 0; i--) {
-        // if(renderSingleCoffee.indexOf(coffees[i])===selectedCoffee){
-            html+=renderSingleCoffee(coffees);
-        }
+    for (var i = 0; i <= coffees.length; i++) {
+        html += coffees.name;
+    }
     return html;
 }
 
 //function to update coffee as per search --->PENDING
 function updateSingleCoffeeName(e){
     e.preventDefault();
+    console.log(x.value)
     var selectedCoffee=x.value.toLowerCase()
-    var filteredSingleCoffee=[];
-    coffees.forEach(function (coffee){
-        if(coffee.name===selectedCoffee){
-            filteredSingleCoffee.push(coffee);
+    var filteredSingleCoffee = coffees.name;
+    for (var i = 0; i < coffees.length; i++) {
+        if (coffees[i].name === selectedCoffee){
+            filteredSingleCoffee = selectedCoffee;
         }
-        tbody2.innerHTML=singleCoffee(filteredSingleCoffee);
-    })
+    }
+    tbody2.innerHTML = singleCoffee();
 }
 
 
