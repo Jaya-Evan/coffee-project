@@ -39,20 +39,37 @@
 
         <div class="col-12 col-md-6">
             <form>
-                <label for="coffee-selection"></label>
-                <input class="form-control" type="text" placeholder="Search for coffee" aria-label="Search">
-
+                <label for="coffeeList"></label>
+                <input list="chooseCoffeeNames" class ="form-control"  type ="text" name="coffeeList" id="coffeeList" placeholder="Search for coffee" aria-label="Search">
+                <datalist id="chooseCoffeeNames" >
+                    <option value="Light City">
+                    <option value="Half City">
+                    <option value="Half City">
+                    <option value="Half City">
+                    <option value="Cinnamon">
+                    <option value="City">
+                    <option value="American">
+                    <option value="Breakfast">
+                    <option value="High">
+                    <option value="Continental">
+                    <option value="New Orleans">
+                    <option value="European">
+                    <option value="Espresso">
+                    <option value="Viennese">
+                    <option value="Italian">
+                    <option value="French">
+                </datalist>
                 <button class="btn btn-sm btn-warning btn-block" id="submit-coffee" type="button">Search</button>
             </form>
         </div>
+
     </div>
 </div>
-
 
 <div class="container-fluid" id="coffee-overflow">
     <div class="row">
         <div class="col-12 col-md-6">
-            <div class="card d-flex align-self-center text-center overflow-auto" id="coffee-card">
+            <div class="card d-flex align-self-center text-center overflow-auto" id="coffee-card1">
                 <h5 class="card-title d-flex align-self-center text-center">NAME</h5>
                 <div class="card-body" id="coffees">
                     <p class="card-text">ROAST</p>
@@ -61,7 +78,7 @@
         </div>
 
         <div class="col-12 col-md-6">
-            <div class="card d-flex align-self-center text-center overflow-auto" id="coffee-card">
+            <div class="card d-flex align-self-center text-center overflow-auto" id="coffee-card2">
                 <h5 class="card-title d-flex align-self-center text-center">NAME</h5>
                 <div class="card-body" id="coffee">
                     <p class="card-text">ROAST</p>
@@ -70,6 +87,22 @@
         </div>
     </div>
 </div>
+
+
+
+<!--------------------------------------------------------------testing the remaining elements to complete project-->
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
