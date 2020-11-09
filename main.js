@@ -64,7 +64,7 @@ var tbody2=document.querySelector('#SingleCoffee');
 var singleCoffeeButton=document.querySelector("#submit-coffee");
 var x=document.querySelector('#coffeeList');
 
-tbody2.innerHTML = renderSingleCoffee(coffees);
+// tbody2.innerHTML = renderSingleCoffee(coffees);
 singleCoffeeButton.addEventListener("click", updateSingleCoffeeName);
 
 
@@ -76,13 +76,11 @@ function renderSingleCoffee(coffee) {
     html += '<p>' + coffee.roast + '</p>' + '</div>';
     return html;
 }
-//function to display single coffee ----->PENDING
-function singleCoffee(coffees) {
+
+function singleCoffee(singleCoffee) {
     var html = '';
-    for (var i = 0; i <= coffees.length; i++) {
-        html += coffees.name;
-    }
-    return html;
+    html += singleCoffee;
+    return singleCoffee;
 }
 
 //function to update coffee as per search --->PENDING
@@ -90,13 +88,17 @@ function updateSingleCoffeeName(e){
     e.preventDefault();
     console.log(x.value)
     var selectedCoffee=x.value.toLowerCase()
-    var filteredSingleCoffee = coffees.name;
+    var filteredSingleCoffee;
     for (var i = 0; i < coffees.length; i++) {
-        if (coffees[i].name === selectedCoffee){
+        if ((coffees[i].name).toLowerCase() === selectedCoffee){
             filteredSingleCoffee = selectedCoffee;
+            console.log("matchfound")
+            break;
+        } else {
+            filteredSingleCoffee = "Sorry, not available..."
         }
     }
-    tbody2.innerHTML = singleCoffee();
+    tbody2.innerHTML = singleCoffee(filteredSingleCoffee);
 }
 
 
