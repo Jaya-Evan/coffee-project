@@ -52,7 +52,7 @@ var coffees = [
     {id: 8, name: 'Continental', roast: 'dark'},
     {id: 9, name: 'New Orleans', roast: 'dark'},
     {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
+    // {id: 11, name: 'Espresso', roast: 'dark'},
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
@@ -60,12 +60,47 @@ var coffees = [
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
+var singleCoffeeButton=document.querySelector("#coffeeList")
 var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
+tbody.innerHTML = singleCoffee(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+singleCoffeeButton.addEventListener("click",updateCoffeeName);
 
 
 //__------------------------------------__//__------------------------------------__//__------------------------------------__
 
+function renderSingleCoffee(coffee) {
+    var html = '<div class = "coffees">';
+    html += '<div>' + coffee.name;
+    html += '<p>' + coffee.roast + '</p>' + '</div>';
+
+    return html;
+}
+
+function singleCoffee(coffees) {
+    var html = '';
+    for(var i = coffees.length-1; i >= 0; i--) {
+        if(singleCoffee.indexOf(coffees[i])===sell)
+
+
+
+
+    }
+    return html;
+}
+
+function updateCoffeeName(e){
+e.preventDefault();
+var selectedCoffee=singleCoffeeButton.value.toLowerCase()
+var singleCoffees=[];
+singleCoffees.forEach(function (coffee){
+    if(coffee.name===selectedCoffee){
+        singleCoffees.push(coffee);
+
+    }
+    tbody.innerHTML=singleCoffee(singleCoffees)
+})
+}
