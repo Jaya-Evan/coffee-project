@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<!--Jumbotron  & container for nav menu items PENDING (overlapped by current search bar -->
+<!------------------------Jumbotron  & container for nav menu items  ----------------------------------->
 <div class="jumbotron jumbotron-fluid" id="main-jumbotron">
     <div class="container">
         <h1 class="display-3">Fancy Coffee Co.</h1>
@@ -24,7 +24,7 @@
 </div>
 
 
-<!--2nd Container for roast options-->
+<!-----------------------------------2nd Container for roast options----------------------------------->
 <div class="container-fluid" id="main-container">
     <div class="row">
         <div class="col-12 col-md-6">
@@ -36,34 +36,34 @@
                     <option>Medium</option>
                     <option>Dark</option>
                 </select>
-                <!--button for roast selection-->
+                <!-----------------------------------button for roast selection--------------------------------->
                 <button class="btn btn-sm btn-warning btn-block" id="submit" type="button">Search</button>
             </form>
         </div>
 
-        <!--div containing data list for searching through coffee list-->
+        <!------------------div containing data list for searching through coffee list---------------------->
         <div class="col-12 col-md-6">
             <form>
                 <label for="coffeeList"></label>
                 <input list="chooseCoffeeNames" class ="form-control"  type ="text" name="coffeeList" id="coffeeList" placeholder="Search for coffee" aria-label="Search">
-                <datalist id="chooseCoffeeNames" >
-                    <option value="Light City">
-                    <option value="Half City">
-                    <option value="Half City">
-                    <option value="Half City">
-                    <option value="Cinnamon">
-                    <option value="City">
-                    <option value="American">
-                    <option value="Breakfast">
-                    <option value="High">
-                    <option value="Continental">
-                    <option value="New Orleans">
-                    <option value="European">
-                    <option value="Espresso">
-                    <option value="Viennese">
-                    <option value="Italian">
-                    <option value="French">
-                </datalist>
+                    <datalist id="chooseCoffeeNames" >
+                        <option value="Light City">
+                        <option value="Half City">
+                        <option value="Half City">
+                        <option value="Half City">
+                        <option value="Cinnamon">
+                        <option value="City">
+                        <option value="American">
+                        <option value="Breakfast">
+                        <option value="High">
+                        <option value="Continental">
+                        <option value="New Orleans">
+                        <option value="European">
+                        <option value="Espresso">
+                        <option value="Viennese">
+                        <option value="Italian">
+                        <option value="French">
+                    </datalist>
                 <button class="btn btn-sm btn-warning btn-block" id="submit-coffee" type="button">Search</button>
             </form>
         </div>
@@ -77,7 +77,7 @@
 
             <div class="card d-flex align-self-center text-center overflow-auto" id="coffee-card1">
                 <!--                <h5 class="card-title d-flex align-self-center text-center">NAME</h5>-->
-                <!-- Card for displaying list of coffees-->
+                <!-- ---------------------------------Card for displaying list of coffees------------------------------>
                 <div class="card-body" id="coffees">
                 <!--                    <p class="card-text">ROAST</p>-->
                 </div>
@@ -87,12 +87,13 @@
         <div class="col-12 col-md-6">
             <div class="card d-flex align-self-center text-center overflow-auto" id="coffee-card2">
             <!--                <h5 class="card-title d-flex align-self-center text-center">NAME</h5>-->
-                <!--card for displaying  single coffee from search-->
+                <!-----------------------------------card for displaying  single coffee from search-->
                 <div class="card-body" id="SingleCoffee">
             <!--                    <p class="card-text">ROAST</p>-->
                 </div>
             </div>
         </div>
+        <button class="btn btn-sm btn-warning btn-block" id="test" type="button"> Add New Coffee</button>
     </div>
 </div>
 

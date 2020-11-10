@@ -1,5 +1,5 @@
 "use strict"
-//html for displaying list of coffees
+//function --> displaying list of coffees
 function renderCoffee(coffee) {
     var html = '<div class = "coffees">';
     html += '<div>' + coffee.name;
@@ -7,7 +7,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
-//reverse the index numbers for the coffees array of object
+//function-->reverse coffees
 function renderCoffees(coffees) {
     var reversed=coffees.reverse()
     var html = '';
@@ -17,7 +17,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
-//Function to update coffee as per selected roast
+//Function -->update coffee selected roast
 function updateCoffees(e) {
     e.preventDefault();
     var selectedRoast = roastSelection.value.toLowerCase();
@@ -31,7 +31,6 @@ function updateCoffees(e) {
 }
 
 
-//coffees array of objects
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -59,17 +58,16 @@ var roastSelection = document.querySelector('#roast-selection')
 tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
-// query selectors for single coffee
-var tbody2=document.querySelector('#SingleCoffee');
-var singleCoffeeButton=document.querySelector("#submit-coffee");
-var x=document.querySelector('#coffeeList');
 
-// tbody2.innerHTML = renderSingleCoffee(coffees);
+                   // card #SingleCoffee
+var tbody2=document.querySelector('#SingleCoffee');
+                    //button #submit coffee
+var singleCoffeeButton=document.querySelector("#submit-coffee");
+                    //input type text #coffeeList
+var inputForDataList=document.querySelector('#coffeeList');
+                    //button-->singleCoffee
 singleCoffeeButton.addEventListener("click", updateSingleCoffeeName);
 
-
-//__------------------------------------__//__------------------------------------__//__------------------------------------__
-//html for displaying single coffee
 function renderSingleCoffee(coffee) {
     var html = '<div class = "coffees">';
     html += '<div>' + coffee.name;
@@ -77,22 +75,21 @@ function renderSingleCoffee(coffee) {
     return html;
 }
 
+//function --> displaying single coffee
 function singleCoffee(singleCoffee) {
     var html = '';
     html += singleCoffee;
     return singleCoffee;
 }
 
-//function to update coffee as per search --->PENDING
+//function to update coffee as per search
 function updateSingleCoffeeName(e){
     e.preventDefault();
-    console.log(x.value)
-    var selectedCoffee=x.value.toLowerCase()
+    var selectedCoffee=inputForDataList.value.toLowerCase()
     var filteredSingleCoffee;
     for (var i = 0; i < coffees.length; i++) {
         if ((coffees[i].name).toLowerCase() === selectedCoffee){
             filteredSingleCoffee = selectedCoffee;
-            console.log("matchfound")
             break;
         } else {
             filteredSingleCoffee = "Sorry, not available..."
@@ -101,9 +98,24 @@ function updateSingleCoffeeName(e){
     tbody2.innerHTML = singleCoffee(filteredSingleCoffee);
 }
 
+//object==>New coffee
+var newCoffee1={
+    id:14,
+    name:"Cold Coffee",
+    roast: "mild"
+}
+//function to add new coffee
+function addNewCoffee(e){
+    e.preventDefault();
+    coffees.push(newCoffee1)
+    tbody.innerHTML=(renderCoffees(coffees))
+}
+
+var addCoffeeButton=document.querySelector('#test');
+addCoffeeButton.addEventListener("click",addNewCoffee);
+
 
 //BUFFER FOR  COMMENTED CODE
-
 // function renderCoffeeSearch(coffee) {
 //     var html = '<card class = "coffees">';
 //     html += '<div>' + coffee.name;
@@ -111,9 +123,11 @@ function updateSingleCoffeeName(e){
 //
 //     return html;
 // }
-
-
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-
-
 // don't submit the form, we just want to update the data
+// tbody2.innerHTML = renderSingleCoffee(coffees);
+
+
+
+
+
